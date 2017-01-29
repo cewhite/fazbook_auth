@@ -20,10 +20,17 @@ router.post('/register', (req, res, next) => {
 router.get('/login', authHelpers.loginRedirect, (req, res) => {
   res.render('auth/login');
 });
-
+// .post to authenticate(not clear to me what's going on here)
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/user',
   failureRedirect: '/auth/login',
   failureFlash: true
 })
 );
+ // allows logout
+ router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+ });
+
+ module.exports = router;
