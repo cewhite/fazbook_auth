@@ -11,6 +11,9 @@ const options = { };
 
 init( );
 // check to see if the username exists
+// find all users in username
+// then if user  is 0/undefined return done (nothing entered)
+// if password matches return user + data values
 passport.use( new LocalStrategy(options, (username, password, done) => {
   models.User.findAll({
     where: {
