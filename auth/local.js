@@ -1,7 +1,7 @@
 // set requirements
 
 const passport = require('passport');
-const LocalStrategy = require('passort-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 
 const init = require('./passport');
 const models = require('../db/models/index');

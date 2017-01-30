@@ -10,7 +10,7 @@ module.exports = ( ) => {
   });
   // use passport to take the serialized user id found in models
   // then ? or catch the error
-  passport.deserializationUser((id, done) => {
+  passport.deserializeUser((id, done) => {
     models.User.findById(id)
      .then((user) => { done(null, user);  })
      .catch((err) => { done(err, null);  });
